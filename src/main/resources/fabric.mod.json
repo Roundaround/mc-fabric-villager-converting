@@ -8,6 +8,8 @@
     "Roundaround"
   ],
   "contact": {
+    "homepage": "",
+    "sources": "https://github.com/Roundaround/mc-fabric-villager-converting"
   },
   "license": "MIT",
   "icon": "assets/villagerconverting/icon.png",
