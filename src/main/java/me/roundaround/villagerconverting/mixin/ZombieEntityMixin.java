@@ -36,7 +36,7 @@ public abstract class ZombieEntityMixin extends HostileEntity {
             return;
         }
 
-        // TODO: Depend on RoundaLib and add config that lets us change the behavior (require name or not).
+        // TODO: Config
         if (!villagerEntity.hasCustomName()) {
             // If the villager does not have a custom name, fall back to vanilla behavior.
             return;
@@ -49,6 +49,7 @@ public abstract class ZombieEntityMixin extends HostileEntity {
         zombieVillagerEntity.setGossipData(villagerEntity.getGossip().serialize(NbtOps.INSTANCE).getValue());
         zombieVillagerEntity.setOfferData(villagerEntity.getOffers().toNbt());
         zombieVillagerEntity.setXp(villagerEntity.getExperience());
+        zombieVillagerEntity.setCustomName(villagerEntity.getCustomName());
         if (!this.isSilent()) {
             world.syncWorldEvent(null, WorldEvents.ZOMBIE_INFECTS_VILLAGER, this.getBlockPos(), 0);
         }
