@@ -15,17 +15,21 @@
   "icon": "assets/villagerconverting/icon.png",
   "environment": "*",
   "entrypoints": {
-    "*": [
+    "main": [
       "me.roundaround.villagerconverting.VillagerConvertingMod"
+    ],
+    "modmenu": [
+      "me.roundaround.villagerconverting.config.modmenu.ModMenuScreen"
     ]
   },
   "mixins": [
     "villagerconverting.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=0.11.3",
-    "minecraft": "1.17.x",
-    "java": ">=16"
+    "fabricloader": ">=0.14.6",
+    "minecraft": "1.18.x",
+    "java": ">=17",
+    "roundalib": ">=0.1.4"
   },
   "suggests": {
   }
