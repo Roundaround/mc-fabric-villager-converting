@@ -2,8 +2,8 @@
   "schemaVersion": 1,
   "id": "villagerconverting",
   "version": "${version}",
-  "name": "Roundaround's Villager Converting",
-  "description": "Villagers attacked by zombies get converted instead of dying, regardless of difficulty.",
+  "name": "Villager Converting",
+  "description": "Villagers attacked by zombies always get converted instead of dying.",
   "authors": [
     "Roundaround"
   ],
