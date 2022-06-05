@@ -1,7 +1,5 @@
 {
   "villagerconverting.config.title": "Villager Converting Config",
   "villagerconverting.mod_enabled.label": "Mod enabled",
-  "villagerconverting.mod_enabled.comment": "Mod enabled",
-  "villagerconverting.require_name.label": "Named villagers only",
-  "villagerconverting.require_name.comment": "Named villagers only"
+  "villagerconverting.require_name.label": "Named villagers only"
 }
