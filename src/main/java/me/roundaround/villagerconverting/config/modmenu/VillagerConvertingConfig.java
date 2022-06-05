@@ -14,13 +14,18 @@ public class VillagerConvertingConfig extends ModConfig {
     MOD_ENABLED = registerConfigOption(
         BooleanConfigOption
             .builder("modEnabled", "villagerconverting.mod_enabled.label")
-            .setComment("villagerconverting.mod_enabled.comment")
+            .setComment("Simple toggle for the mod! When set to false, the \n"
+                + " villagers will fall back to vanilla behavior/probability \n"
+                + " for zombie-conversion.")
             .build());
     REQUIRE_NAME = registerConfigOption(
         BooleanConfigOption
             .yesNoBuilder("requireName", "villagerconverting.require_name.label")
             .setDefaultValue(false)
-            .setComment("villagerconverting.require_name.comment")
+            .setComment("When set to true, only villagers that have a custom \n"
+                + " name set (i.e. with a nametag) will be guaranteed to \n"
+                + " convert! Non-named villagers will fall back to vanilla \n"
+                + " behavior.")
             .build());
   }
 }
