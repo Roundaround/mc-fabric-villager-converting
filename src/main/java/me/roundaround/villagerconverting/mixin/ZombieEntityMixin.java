@@ -15,7 +15,7 @@ import net.minecraft.world.WorldEvents;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import me.roundaround.villagerconverting.VillagerConvertingMod;
 
@@ -26,7 +26,7 @@ public abstract class ZombieEntityMixin extends HostileEntity {
   }
 
   @Inject(method = "onKilledOther(Lnet/minecraft/server/world/ServerWorld;Lnet/minecraft/entity/LivingEntity;)V", at = @At("HEAD"), cancellable = true)
-  private void onKilledOther(ServerWorld world, LivingEntity other, CallbackInfo callbackInfo) {
+  private void onKilledOther(ServerWorld world, LivingEntity other, CallbackInfoReturnable<Boolean> callbackInfo) {
     if (!VillagerConvertingMod.CONFIG.MOD_ENABLED.getValue()) {
       // Mod is disabled, fall back to vanilla behavior.
       return;
@@ -56,12 +56,12 @@ public abstract class ZombieEntityMixin extends HostileEntity {
     zombieVillagerEntity.setGossipData(villagerEntity.getGossip().serialize(NbtOps.INSTANCE).getValue());
     zombieVillagerEntity.setOfferData(villagerEntity.getOffers().toNbt());
     zombieVillagerEntity.setXp(villagerEntity.getExperience());
-    zombieVillagerEntity.setCustomName(villagerEntity.getCustomName());
     if (!this.isSilent()) {
       world.syncWorldEvent(null, WorldEvents.ZOMBIE_INFECTS_VILLAGER, this.getBlockPos(), 0);
     }
 
     // Cancel the execution of the rest of the method.
+    callbackInfo.setReturnValue(false);
     callbackInfo.cancel();
   }
 }
