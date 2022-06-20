@@ -15,7 +15,7 @@ import net.minecraft.world.WorldEvents;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import me.roundaround.villagerconverting.VillagerConvertingMod;
 
@@ -26,7 +26,7 @@ public abstract class ZombieEntityMixin extends HostileEntity {
   }
 
   @Inject(method = "onKilledOther", at = @At("HEAD"), cancellable = true)
-  private void onKilledOther(ServerWorld world, LivingEntity other, CallbackInfoReturnable<Boolean> callbackInfo) {
+  private void onKilledOther(ServerWorld world, LivingEntity other, CallbackInfo callbackInfo) {
     if (!VillagerConvertingMod.CONFIG.MOD_ENABLED.getValue()) {
       // Mod is disabled, fall back to vanilla behavior.
       return;
