@@ -2,8 +2,7 @@ package me.roundaround.villagerconverting.config.modmenu;
 
 import com.terraformersmc.modmenu.api.ConfigScreenFactory;
 import com.terraformersmc.modmenu.api.ModMenuApi;
-
-import me.roundaround.roundalib.config.gui.screen.ConfigScreen;
+import me.roundaround.roundalib.client.gui.screen.ConfigScreen;
 import me.roundaround.villagerconverting.VillagerConvertingMod;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;

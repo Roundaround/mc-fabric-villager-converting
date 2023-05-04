@@ -13,7 +13,7 @@ public class VillagerConvertingConfig extends ModConfig {
 
     MOD_ENABLED = registerConfigOption(
         BooleanConfigOption
-            .builder("modEnabled", "villagerconverting.mod_enabled.label")
+            .builder(this, "modEnabled", "villagerconverting.mod_enabled.label")
             .setComment(
                 "Simple toggle for the mod! When set to false, the",
                 "villagers will fall back to vanilla behavior/probability",
@@ -21,7 +21,7 @@ public class VillagerConvertingConfig extends ModConfig {
             .build());
     REQUIRE_NAME = registerConfigOption(
         BooleanConfigOption
-            .yesNoBuilder("requireName", "villagerconverting.require_name.label")
+            .yesNoBuilder(this, "requireName", "villagerconverting.require_name.label")
             .setDefaultValue(false)
             .setComment(
                 "When set to true, only villagers that have a custom",
