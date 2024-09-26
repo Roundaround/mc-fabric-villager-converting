@@ -11,6 +11,12 @@ import net.fabricmc.api.Environment;
 public class ModMenuScreen implements ModMenuApi {
   @Override
   public ConfigScreenFactory<?> getModConfigScreenFactory() {
-    return screen -> new ConfigScreen(screen, VillagerConvertingMod.CONFIG);
+    return (screen) -> {
+      VillagerConvertingConfig config = VillagerConvertingConfig.getInstance();
+      if (!config.isReady()) {
+        return null;
+      }
+      return new ConfigScreen(screen, VillagerConvertingMod.MOD_ID, config);
+    };
   }
 }
