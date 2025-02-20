@@ -1,6 +1,6 @@
 package me.roundaround.villagerconverting;
 
-import me.roundaround.villagerconverting.config.modmenu.VillagerConvertingConfig;
+import me.roundaround.villagerconverting.config.VillagerConvertingConfig;
 import net.fabricmc.api.ModInitializer;
 
 public final class VillagerConvertingMod implements ModInitializer {

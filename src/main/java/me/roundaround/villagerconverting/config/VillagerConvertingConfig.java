@@ -1,4 +1,4 @@
-package me.roundaround.villagerconverting.config.modmenu;
+package me.roundaround.villagerconverting.config;
 
 import me.roundaround.roundalib.config.ConfigPath;
 import me.roundaround.roundalib.config.manage.ModConfigImpl;
@@ -28,15 +28,19 @@ public class VillagerConvertingConfig extends ModConfigImpl implements WorldScop
   public void registerOptions() {
     modEnabled = this.register(BooleanConfigOption.builder(ConfigPath.of("modEnabled"))
         .setDefaultValue(true)
-        .setComment("Simple toggle for the mod! When set to false, the",
-            "villagers will fall back to vanilla behavior/probability", "for zombie-conversion."
+        .setComment(
+            "Simple toggle for the mod! When set to false, the",
+            "villagers will fall back to vanilla behavior/probability",
+            "for zombie-conversion."
         )
         .build());
     requireName = this.register(BooleanConfigOption.yesNoBuilder(ConfigPath.of("requireName"))
         .setDefaultValue(false)
-        .setComment("When set to true, only villagers that have a custom",
+        .setComment(
+            "When set to true, only villagers that have a custom",
             "name set (i.e. with a nametag) will be guaranteed to",
-            "convert! Non-named villagers will fall back to vanilla", "behavior."
+            "convert! Non-named villagers will fall back to vanilla",
+            "behavior."
         )
         .build());
   }
@@ -72,10 +76,12 @@ public class VillagerConvertingConfig extends ModConfigImpl implements WorldScop
 
     @Override
     public void registerOptions() {
-      modEnabled = this.register(
-          BooleanConfigOption.builder(ConfigPath.of("modEnabled")).setDefaultValue(true).build());
-      requireName = this.register(
-          BooleanConfigOption.yesNoBuilder(ConfigPath.of("requireName")).setDefaultValue(false).build());
+      modEnabled = this.register(BooleanConfigOption.builder(ConfigPath.of("modEnabled"))
+          .setDefaultValue(true)
+          .build());
+      requireName = this.register(BooleanConfigOption.yesNoBuilder(ConfigPath.of("requireName"))
+          .setDefaultValue(false)
+          .build());
     }
 
     @Override

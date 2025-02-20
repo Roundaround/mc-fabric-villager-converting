@@ -2,7 +2,7 @@ package me.roundaround.villagerconverting.mixin;
 
 import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
 import com.llamalad7.mixinextras.sugar.Local;
-import me.roundaround.villagerconverting.config.modmenu.VillagerConvertingConfig;
+import me.roundaround.villagerconverting.config.VillagerConvertingConfig;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.mob.ZombieEntity;
 import net.minecraft.entity.passive.VillagerEntity;

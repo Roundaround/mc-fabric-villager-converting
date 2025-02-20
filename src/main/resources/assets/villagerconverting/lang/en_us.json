@@ -1,5 +1,7 @@
 {
   "villagerconverting.config.title": "Villager Converting Config",
+  "villagerconverting.config.notInWorld.1": "Villager Converting is configurable on a per-world/save basis.",
+  "villagerconverting.config.notInWorld.2": "Please join a world to use the configuration screen!",
   "villagerconverting.modEnabled.label": "Mod enabled",
   "villagerconverting.requireName.label": "Named villagers only"
 }

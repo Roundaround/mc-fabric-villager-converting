@@ -20,14 +20,14 @@
       "me.roundaround.villagerconverting.VillagerConvertingMod"
     ],
     "modmenu": [
-      "me.roundaround.villagerconverting.config.modmenu.ModMenuScreen"
+      "me.roundaround.villagerconverting.compat.modmenu.ModMenuImpl"
     ]
   },
   "mixins": [
     "villagerconverting.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=0.13.3",
+    "fabricloader": "*",
     "minecraft": "1.21.*"
   }
 }
