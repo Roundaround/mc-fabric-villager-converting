@@ -1,11 +1,11 @@
 package me.roundaround.villagerconverting.config;
 
-import me.roundaround.roundalib.config.ConfigPath;
-import me.roundaround.roundalib.config.manage.ModConfigImpl;
-import me.roundaround.roundalib.config.manage.store.GameScopedFileStore;
-import me.roundaround.roundalib.config.manage.store.WorldScopedFileStore;
-import me.roundaround.roundalib.config.option.BooleanConfigOption;
-import me.roundaround.villagerconverting.VillagerConvertingMod;
+import me.roundaround.villagerconverting.generated.Constants;
+import me.roundaround.villagerconverting.roundalib.config.ConfigPath;
+import me.roundaround.villagerconverting.roundalib.config.manage.ModConfigImpl;
+import me.roundaround.villagerconverting.roundalib.config.manage.store.GameScopedFileStore;
+import me.roundaround.villagerconverting.roundalib.config.manage.store.WorldScopedFileStore;
+import me.roundaround.villagerconverting.roundalib.config.option.BooleanConfigOption;
 
 public class VillagerConvertingConfig extends ModConfigImpl implements WorldScopedFileStore {
   private static VillagerConvertingConfig instance;
@@ -21,12 +21,12 @@ public class VillagerConvertingConfig extends ModConfigImpl implements WorldScop
   }
 
   private VillagerConvertingConfig() {
-    super(VillagerConvertingMod.MOD_ID);
+    super(Constants.MOD_ID);
   }
 
   @Override
   public void registerOptions() {
-    modEnabled = this.register(BooleanConfigOption.builder(ConfigPath.of("modEnabled"))
+    this.modEnabled = this.register(BooleanConfigOption.builder(ConfigPath.of("modEnabled"))
         .setDefaultValue(true)
         .setComment(
             "Simple toggle for the mod! When set to false, the",
@@ -34,7 +34,7 @@ public class VillagerConvertingConfig extends ModConfigImpl implements WorldScop
             "for zombie-conversion."
         )
         .build());
-    requireName = this.register(BooleanConfigOption.yesNoBuilder(ConfigPath.of("requireName"))
+    this.requireName = this.register(BooleanConfigOption.yesNoBuilder(ConfigPath.of("requireName"))
         .setDefaultValue(false)
         .setComment(
             "When set to true, only villagers that have a custom",
@@ -71,15 +71,15 @@ public class VillagerConvertingConfig extends ModConfigImpl implements WorldScop
     }
 
     private Legacy() {
-      super(VillagerConvertingMod.MOD_ID);
+      super(Constants.MOD_ID);
     }
 
     @Override
     public void registerOptions() {
-      modEnabled = this.register(BooleanConfigOption.builder(ConfigPath.of("modEnabled"))
+      this.modEnabled = this.register(BooleanConfigOption.builder(ConfigPath.of("modEnabled"))
           .setDefaultValue(true)
           .build());
-      requireName = this.register(BooleanConfigOption.yesNoBuilder(ConfigPath.of("requireName"))
+      this.requireName = this.register(BooleanConfigOption.yesNoBuilder(ConfigPath.of("requireName"))
           .setDefaultValue(false)
           .build());
     }

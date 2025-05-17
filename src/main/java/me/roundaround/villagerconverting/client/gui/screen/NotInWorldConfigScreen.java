@@ -1,7 +1,7 @@
 package me.roundaround.villagerconverting.client.gui.screen;
 
-import me.roundaround.roundalib.client.gui.layout.screen.ThreeSectionLayoutWidget;
-import me.roundaround.roundalib.client.gui.widget.drawable.LabelWidget;
+import me.roundaround.villagerconverting.roundalib.client.gui.layout.screen.ThreeSectionLayoutWidget;
+import me.roundaround.villagerconverting.roundalib.client.gui.widget.drawable.LabelWidget;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.widget.ButtonWidget;
 import net.minecraft.screen.ScreenTexts;
@@ -24,8 +24,9 @@ public class NotInWorldConfigScreen extends Screen {
 
     this.layout.addHeader(this.textRenderer, this.title);
 
-    this.layout.addBody(LabelWidget.builder(this.textRenderer,
-        List.of(Text.translatable("villagerconverting.config.notInWorld.1"),
+    this.layout.addBody(LabelWidget.builder(
+        this.textRenderer, List.of(
+            Text.translatable("villagerconverting.config.notInWorld.1"),
             Text.translatable("villagerconverting.config.notInWorld.2")
         )
     ).alignTextCenterX().alignTextCenterY().hideBackground().showShadow().lineSpacing(2).build());
