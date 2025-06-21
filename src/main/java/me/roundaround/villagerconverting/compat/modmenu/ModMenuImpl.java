@@ -2,11 +2,14 @@ package me.roundaround.villagerconverting.compat.modmenu;
 
 import com.terraformersmc.modmenu.api.ConfigScreenFactory;
 import com.terraformersmc.modmenu.api.ModMenuApi;
+
+import me.roundaround.gradle.api.annotation.Entrypoint;
 import me.roundaround.villagerconverting.client.gui.screen.NotInWorldConfigScreen;
 import me.roundaround.villagerconverting.config.VillagerConvertingConfig;
 import me.roundaround.villagerconverting.generated.Constants;
 import me.roundaround.villagerconverting.roundalib.client.gui.screen.ConfigScreen;
 
+@Entrypoint(Entrypoint.MOD_MENU)
 public class ModMenuImpl implements ModMenuApi {
   @Override
   public ConfigScreenFactory<?> getModConfigScreenFactory() {

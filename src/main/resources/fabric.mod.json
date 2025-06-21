@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
-  "id": "villagerconverting",
+  "id": "${modId}",
   "version": "${version}",
   "name": "Villager Converting",
-  "description": "Villagers attacked by zombies always get converted instead of dying.\n${library}",
+  "description": "Villagers attacked by zombies always get converted instead of dying.",
   "authors": [
     "Roundaround"
   ],
@@ -12,22 +12,5 @@
     "sources": "https://github.com/Roundaround/mc-fabric-villager-converting",
     "issues": "https://github.com/Roundaround/mc-fabric-villager-converting/issues"
   },
-  "license": "MIT",
-  "icon": "assets/villagerconverting/icon.png",
-  "environment": "*",
-  "entrypoints": {
-    "main": [
-      "me.roundaround.villagerconverting.VillagerConvertingMod"
-    ],
-    "modmenu": [
-      "me.roundaround.villagerconverting.compat.modmenu.ModMenuImpl"
-    ]
-  },
-  "mixins": [
-    "villagerconverting.mixins.json"
-  ],
-  "depends": {
-    "fabricloader": "*",
-    "minecraft": "1.21.*"
-  }
+  "license": "MIT"
 }
