@@ -5,6 +5,7 @@
 ![](https://img.shields.io/badge/Side-Server-%23313e51?style=for-the-badge)
 
 [![Modrinth Downloads](https://img.shields.io/modrinth/dt/villager-converting?style=flat&logo=modrinth&color=00AF5C)](https://modrinth.com/mod/villager-converting)
+[![CurseForge Downloads](https://img.shields.io/curseforge/dt/1502027?style=flat&logo=curseforge&color=F16436)](https://www.curseforge.com/minecraft/mc-mods/villager-converting)
 [![GitHub Repo stars](https://img.shields.io/github/stars/Roundaround/mc-fabric-villager-converting?style=flat&logo=github)](https://github.com/Roundaround/mc-fabric-villager-converting)
 
 [![Support me on Ko-fi](https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/compact/donate/kofi-singular-alt_vector.svg)](https://ko-fi.com/roundaround)
