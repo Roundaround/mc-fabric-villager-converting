@@ -1,11 +1,15 @@
 package me.roundaround.villagerconverting.config;
 
+import me.roundaround.roundalib.config.manage.store.FileBackedConfigStore;
+import me.roundaround.roundalib.config.manage.store.ReadOnlyFileStore;
 import me.roundaround.villagerconverting.generated.Constants;
-import me.roundaround.villagerconverting.roundalib.config.ConfigPath;
-import me.roundaround.villagerconverting.roundalib.config.manage.ModConfigImpl;
-import me.roundaround.villagerconverting.roundalib.config.manage.store.GameScopedFileStore;
-import me.roundaround.villagerconverting.roundalib.config.manage.store.WorldScopedFileStore;
-import me.roundaround.villagerconverting.roundalib.config.option.BooleanConfigOption;
+import me.roundaround.roundalib.config.ConfigPath;
+import me.roundaround.roundalib.config.manage.ModConfigImpl;
+import me.roundaround.roundalib.config.manage.store.GameScopedFileStore;
+import me.roundaround.roundalib.config.manage.store.WorldScopedFileStore;
+import me.roundaround.roundalib.config.option.BooleanConfigOption;
+
+import java.util.Optional;
 
 public class VillagerConvertingConfig extends ModConfigImpl implements WorldScopedFileStore {
   private static VillagerConvertingConfig instance;
@@ -45,27 +49,26 @@ public class VillagerConvertingConfig extends ModConfigImpl implements WorldScop
         .build());
   }
 
-  @Override
   public void readFromStore() {
     // Load from the legacy instance (game-scoped) first so we can
     // migrate old game-scoped config files.
-    Legacy legacy = Legacy.load();
+    Legacy legacy = Legacy.getInstance();
+    legacy.readFromStore();
     this.modEnabled.setValue(legacy.modEnabled.getPendingValue());
     this.requireName.setValue(legacy.requireName.getPendingValue());
 
     WorldScopedFileStore.super.readFromStore();
   }
 
-  private static class Legacy extends ModConfigImpl implements GameScopedFileStore {
+  private static class Legacy extends ModConfigImpl implements ReadOnlyFileStore, GameScopedFileStore {
     private static Legacy instance;
 
     public BooleanConfigOption modEnabled;
     public BooleanConfigOption requireName;
 
-    public static Legacy load() {
+    public static Legacy getInstance() {
       if (instance == null) {
         instance = new Legacy();
-        instance.init();
       }
       return instance;
     }
@@ -82,11 +85,6 @@ public class VillagerConvertingConfig extends ModConfigImpl implements WorldScop
       this.requireName = this.register(BooleanConfigOption.yesNoBuilder(ConfigPath.of("requireName"))
           .setDefaultValue(false)
           .build());
-    }
-
-    @Override
-    public void writeToStore() {
-      // Don't ever create a config file - only read from it.
     }
   }
 }
