@@ -1,8 +1,8 @@
 ![Villager Converting](https://imgur.com/fnqUD8S.png)
 
-![](https://img.shields.io/badge/Loader-Fabric-%23313e51?style=for-the-badge)
-![](https://img.shields.io/badge/MC-26.1--26.1.1%20|%201.21%20|%201.20%20|%201.19%20|%201.18.2-%23313e51?style=for-the-badge)
-![](https://img.shields.io/badge/Side-Server-%23313e51?style=for-the-badge)
+![](https://img.shields.io/badge/Loader-Fabric-313e51?style=for-the-badge)
+![](https://img.shields.io/badge/MC-26.1--26.1.1%20|%201.21%20|%201.20%20|%201.19%20|%201.18.2-313e51?style=for-the-badge)
+![](https://img.shields.io/badge/Side-Server-313e51?style=for-the-badge)
 
 [![Modrinth Downloads](https://img.shields.io/modrinth/dt/villager-converting?style=flat&logo=modrinth&color=00AF5C)](https://modrinth.com/mod/villager-converting)
 [![CurseForge Downloads](https://img.shields.io/curseforge/dt/1502027?style=flat&logo=curseforge&color=F16436)](https://www.curseforge.com/minecraft/mc-mods/villager-converting)
