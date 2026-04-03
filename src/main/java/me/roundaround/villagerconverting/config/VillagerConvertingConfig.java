@@ -49,15 +49,9 @@ public class VillagerConvertingConfig extends ModConfigImpl implements WorldScop
         .build());
   }
 
-  public void readFromStore() {
-    // Load from the legacy instance (game-scoped) first so we can
-    // migrate old game-scoped config files.
-    Legacy legacy = Legacy.getInstance();
-    legacy.readFromStore();
-    this.modEnabled.setValue(legacy.modEnabled.getPendingValue());
-    this.requireName.setValue(legacy.requireName.getPendingValue());
-
-    WorldScopedFileStore.super.readFromStore();
+  @Override
+  public Optional<? extends FileBackedConfigStore> getLegacyStore() {
+    return Optional.of(Legacy.getInstance());
   }
 
   private static class Legacy extends ModConfigImpl implements ReadOnlyFileStore, GameScopedFileStore {
